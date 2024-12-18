@@ -18,6 +18,7 @@ function pagination(array, pageSize, pageNumber) {
 function CatalogPage() {
     const [currentPage, setCurrentPage] = useState(1)
     const [selectedSizes, setSelectedSizes] = useState([])
+
     const pageSize = 9
 
     const handlePageChange = (pageNumber) => {
@@ -40,18 +41,19 @@ function CatalogPage() {
         currentPage
     )
 
-    const totalPagesArr = () => {
-        const totalPages = Math.ceil(
+    const totalPages = () => {
+        const total = Math.ceil(
             products.filter(
                 (product) =>
                     selectedSizes.length === 0 || selectedSizes.includes(product.size)
             ).length / pageSize
         )
-
         const pages = []
-        for (let i = 1; i <= totalPages; i++) {
+
+        for (let i = 1; i <= total; i++) {
             pages.push(i)
         }
+
         return pages
     }
 
@@ -246,7 +248,7 @@ function CatalogPage() {
                         <nav className="catalog_nav__box">
                             <div className="catalog_nav__pagination">
                                 {
-                                    totalPagesArr().map((number) => (
+                                    totalPages().map((number) => (
                                         <a
                                             key={number}
                                             onClick={() => handlePageChange(number)}
