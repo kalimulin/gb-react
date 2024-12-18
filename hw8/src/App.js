@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import MainPage from "./components/MainPage";
-import CatalogPage from "./components/CatalogPage";
+import CatalogPage from "./pages/Catalog/Catalog";
 import CartPage from "./components/CartPage";
 import RegistrationPage from "./components/RegistrationPage";
 
