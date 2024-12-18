@@ -1,61 +1,58 @@
 @import 'vars';
 @import 'mixins';
-@import 'header';
-@import 'mainPage';
 @import 'footer';
 @import 'product';
-@import 'catalog';
-@import 'cart';
-@import 'registration';
+
+@import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Murecho:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Unbounded:wght@200..900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 summary {
-    display: block;
+  display: block;
 }
 
 summary::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .box-content {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .content {
-    flex: 1;
+  flex: 1;
 }
 
 .center {
-    padding-left: calc(50% - $widthDesktopSite / 2);
-    padding-right: calc(50% - $widthDesktopSite / 2);
+  padding-left: calc(50% - $widthDesktopSite / 2);
+  padding-right: calc(50% - $widthDesktopSite / 2);
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .center {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 767.98px) {
-    .center {
-        padding-left: 8px;
-        padding-right: 8px;
-    }
+  .center {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }

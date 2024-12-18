@@ -1,49 +1,44 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
-import { CartContext } from "../contexts/CartContext";
-import products from "./productsData"; // Импорт массива продуктов
+import React, {useContext, useState, useEffect} from "react"
+import {Link} from "react-router-dom"
+import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer"
+import {CartContext} from "../../contexts/CartContext"
+import products from "../../components/productsData"
 
-import { ReactComponent as CloseIcon } from "../img/close_icon.svg";
+import {ReactComponent as CloseIcon} from "../../img/close_icon.svg"
+import "./Cart.scss"
 
 const CartPage = () => {
-  // Получение функционала из CartContext
-  const { cartItems, removeFromCart, updateCartItemQuantity, clearCart } = useContext(CartContext);
+  const {cartItems, removeFromCart, updateCartItemQuantity, clearCart} = useContext(CartContext)
 
-  // Состояние для хранения общей стоимости
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0)
 
-  // Определение общей стоимости товаров в корзине
   useEffect(() => {
-    let total = 0;
+    let total = 0
     cartItems.forEach((item) => {
-      const product = products.find((product) => product.id === item.id);
-      total += product.price * item.quantity;
-    });
-    setTotalPrice(total);
-  }, [cartItems]);
+      const product = products.find((product) => product.id === item.id)
+      total += product.price * item.quantity
+    })
+    setTotalPrice(total)
+  }, [cartItems])
 
-  // Изменение количества товара в корзине
   const handleQuantityChange = (event, productId) => {
-    const newQuantity = parseInt(event.target.value);
-    updateCartItemQuantity(productId, newQuantity);
-  };
-    
-  // Удаления товара из корзины
-  const handleRemoveItem = (productId) => {
-    removeFromCart(productId);
-  };
+    const newQuantity = parseInt(event.target.value)
+    updateCartItemQuantity(productId, newQuantity)
+  }
 
-  // Очистка корзины
+  const handleRemoveItem = (productId) => {
+    removeFromCart(productId)
+  }
+
   const handleClearCart = () => {
-    clearCart();
-  };
+    clearCart()
+  }
 
   return (
     <div className="box-content">
-      <Header />
-      <content className="content">
+      <Header/>
+      <div className="content">
         <div className="head center">
           <h1 className="head_title">SHOPPING CART</h1>
         </div>
@@ -54,49 +49,50 @@ const CartPage = () => {
             <div className="cart-box__left">
               <div className="cart-box__products">
                 {cartItems.map((item) => {
-                  const product = products.find((product) => product.id === item.id);
+                  const product = products.find((product) => product.id === item.id)
                   if (product)
-                  return (
-                    <div className="cart-box__product_card" key={item.id}>
-                      <div className="cart-box__card_img">
-                        <img src={product.imageUrl} alt="Product image" />
-                      </div>
-                      <div className="cart-box__card_text">
-                        <h4 className="cart-box__card_title">{product.title}</h4>
-                        <p className="cart-box__card_content">
-                          Price:&nbsp;
-                          <span className="cart-box__card_price cart-box__card_value">
+                    return (
+                      <div className="cart-box__product_card" key={item.id}>
+                        <div className="cart-box__card_img">
+                          <img src={product.imageUrl} alt="Product image"/>
+                        </div>
+                        <div className="cart-box__card_text">
+                          <h4 className="cart-box__card_title">{product.title}</h4>
+                          <p className="cart-box__card_content">
+                            Price:&nbsp;
+                            <span className="cart-box__card_price cart-box__card_value">
                             ${product.price.toFixed(2)}
                           </span>
-                        </p>
-                        <p className="cart-box__card_content">
-                          Color:&nbsp;
-                          <span className="cart-box__card_value">
+                          </p>
+                          <p className="cart-box__card_content">
+                            Color:&nbsp;
+                            <span className="cart-box__card_value">
                             {product.color}
                           </span>
-                        </p>
-                        <p className="cart-box__card_content">
-                          Size:&nbsp;
-                          <span className="cart-box__card_value">
+                          </p>
+                          <p className="cart-box__card_content">
+                            Size:&nbsp;
+                            <span className="cart-box__card_value">
                             {product.size}
                           </span>
-                        </p>
-                        <label htmlFor="quantity" className="cart-box__card_content">
-                          Quantity:
-                        </label>
-                        <input
-                          id="quantity"
-                          type="number"
-                          min="1"
-                          value={item.quantity}
-                          onChange={(e) => handleQuantityChange(e, item.id)}
-                        />
+                          </p>
+                          <label htmlFor="quantity" className="cart-box__card_content">
+                            Quantity:
+                          </label>
+                          <input
+                            id="quantity"
+                            type="number"
+                            min="1"
+                            defaultValue={item.quantity}
+                            onChange={(e) => handleQuantityChange(e, item.id)}
+                          />
+                        </div>
+                        <a className="cart-box__close_icon"
+                           onClick={() => handleRemoveItem(item.id)}>
+                          <CloseIcon/>
+                        </a>
                       </div>
-                      <a className="cart-box__close_icon" onClick={() => handleRemoveItem(item.id)}>
-                        <CloseIcon />
-                      </a>
-                    </div>
-                  );
+                    )
                 })}
               </div>
               <div className="cart-box__buttons">
@@ -121,7 +117,7 @@ const CartPage = () => {
                 type="text"
                 id="country"
                 placeholder="Country"
-                value="Bangladesh"
+                defaultValue="Bangladesh"
                 required
               />
               <input
@@ -153,7 +149,7 @@ const CartPage = () => {
                 <div>GRAND TOTAL</div>
                 <div className="cart-box__totalprice">${totalPrice.toFixed(2)}</div>
               </div>
-              <hr className="cart-box__checkout-line" />
+              <hr className="cart-box__checkout-line"/>
               <div className="cart-box__checkout-button">
                 <a className="cart-box__checkout_button_title" href="#">
                   PROCEED TO CHECKOUT
@@ -162,10 +158,10 @@ const CartPage = () => {
             </div>
           </div>
         </div>
-      </content>
-      <Footer />
+      </div>
+      <Footer/>
     </div>
-  );
+  )
 }
 
-export default CartPage;
+export default CartPage

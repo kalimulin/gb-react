@@ -1,27 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-import Header from "./Header";
-import Footer from "./Footer";
-import ProductItem from "./ProductItem";
+import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer"
+import ProductItem from "../../components/ProductItem"
 
-import top_brand_img from "../img/top_brand_img.png";
+import top_brand_img from "../../img/top_brand_img.png"
 
-import { HandySvg } from "handy-svg";
-import top_brand_title from "../img/top_brand_title.svg";
+import { HandySvg } from "handy-svg"
+import top_brand_title from "../../img/top_brand_title.svg"
 
-import { ReactComponent as FeatureDelivery_icon } from "../img/feature_icon1.svg";
-import { ReactComponent as FeatureDiscount_icon } from "../img/feature_icon2.svg";
-import { ReactComponent as FeatureQuality_icon } from "../img/feature_icon3.svg";
+import { ReactComponent as FeatureDelivery_icon } from "../../img/feature_icon1.svg"
+import { ReactComponent as FeatureDiscount_icon } from "../../img/feature_icon2.svg"
+import { ReactComponent as FeatureQuality_icon } from "../../img/feature_icon3.svg"
+import products from "../../components/productsData"
 
-import products from "./productsData"; // Импорт массива продуктов
-
-import "../style.scss";
+import "./Main.scss"
 
 function MainPage() {
   return (
     <div className="box-content">
       <Header />
-      <content className="content">
+      <div className="content">
         <div className="top_brand">
           <div className="top_brand_img">
             <img className="top_brand_pic" src={top_brand_img} alt="Man" />
@@ -114,10 +113,10 @@ function MainPage() {
             </figure>
           </div>
         </section>
-      </content>
+      </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default MainPage;
+export default MainPage

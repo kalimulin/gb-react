@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-import Header from "../../components/Header"
+import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer"
 import ProductItem from "../../components/ProductItem"
 
@@ -10,6 +10,8 @@ import {HandySvg} from "handy-svg"
 import drop_down_arrow from "../../img/drop-down_arrow.svg"
 
 import products from "../../components/productsData"
+
+import "./Catalog.scss";
 
 function pagination(array, pageSize, pageNumber) {
     return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize)
@@ -60,7 +62,7 @@ function CatalogPage() {
     return (
         <div className="box-content">
             <Header/>
-            <content className="content">
+            <div className="content">
                 <div className="head center">
                     <h1 className="head_title">NEW ARRIVALS</h1>
                     <nav className="breadcrums">
@@ -262,7 +264,7 @@ function CatalogPage() {
                         </nav>
                     </div>
                 </div>
-            </content>
+            </div>
             <Footer/>
         </div>
     )
