@@ -11,7 +11,7 @@ import drop_down_arrow from "../../img/drop-down_arrow.svg"
 
 import products from "../../data"
 
-import "./Catalog.scss";
+import "./Catalog.scss"
 
 function pagination(array, pageSize, pageNumber) {
     return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize)

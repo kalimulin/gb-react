@@ -1,10 +1,10 @@
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer/Footer"
 
-import { HandySvg } from "handy-svg";
-import right_arrow_icon from "../../img/right_arrow.svg";
+import { HandySvg } from "handy-svg"
+import right_arrow_icon from "../../img/right_arrow.svg"
 
-import "./Registration.scss";
+import "./Registration.scss"
 
 function RegistrationPage() {
     return (
@@ -96,7 +96,7 @@ function RegistrationPage() {
             </div>
             <Footer />
         </div>
-    );
+    )
 }
 
-export default RegistrationPage;
+export default RegistrationPage

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import creator from "../../img/creator.png";
+import creator from "../../img/creator.png"
 
-import {HandySvg} from 'handy-svg';
-import social_net_link1 from "../../img/social_net_link1.svg";
-import social_net_link2 from "../../img/social_net_link2.svg";
+import {HandySvg} from 'handy-svg'
+import social_net_link1 from "../../img/social_net_link1.svg"
+import social_net_link2 from "../../img/social_net_link2.svg"
 
 import "./Footer.scss"
 
@@ -56,7 +56,7 @@ function Footer() {
         </div>
       </section>
     </footer>
-  );
+  )
 }
 
 export default Footer

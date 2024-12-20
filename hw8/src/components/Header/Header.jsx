@@ -1,20 +1,20 @@
-import React, {useContext} from 'react';
-import {Link} from "react-router-dom";
+import React, {useContext} from 'react'
+import {Link} from "react-router-dom"
 
-import {CartContext} from "../../contexts/CartContext";
+import {CartContext} from "../../contexts/CartContext"
 
-import {HandySvg} from 'handy-svg';
-import header_logo from "../../img/header_logo.svg";
-import search_icon from "../../img/search_icon.svg";
-import {ReactComponent as Menu_icon} from "../../img/menu_icon.svg";
-import {ReactComponent as User_icon} from "../../img/user_icon.svg";
-import {ReactComponent as Cart_icon} from '../../img/cart_icon.svg';
+import {HandySvg} from 'handy-svg'
+import header_logo from "../../img/header_logo.svg"
+import search_icon from "../../img/search_icon.svg"
+import {ReactComponent as Menu_icon} from "../../img/menu_icon.svg"
+import {ReactComponent as User_icon} from "../../img/user_icon.svg"
+import {ReactComponent as Cart_icon} from '../../img/cart_icon.svg'
 
 import "./Header.scss"
 
 function Header() {
-  const {cartItems} = useContext(CartContext);
-  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const {cartItems} = useContext(CartContext)
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0)
 
   return (
     <header className="header center">
@@ -75,7 +75,7 @@ function Header() {
         </Link>
       </div>
     </header>
-  );
+  )
 }
 
 export default Header
