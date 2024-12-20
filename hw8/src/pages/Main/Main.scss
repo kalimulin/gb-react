@@ -1,5 +1,5 @@
-@import "../../vars";
-@import "../../mixins";
+@import "../../scss/vars";
+@import "../../scss/mixins";
 
 .top_brand {
   background-color: #F1E4E6;
@@ -64,19 +64,19 @@
   align-items: center;
 
   &__for_women {
-    @include offerSection(url(img/for_women.png));
+    @include offerSection(url("../../img/for_women.png"));
   }
 
   &__for_men {
-    @include offerSection(url(img/for_men.jpg));
+    @include offerSection(url("../../img/for_men.jpg"));
   }
 
   &__for_kids {
-    @include offerSection(url(img/for_kids.jpg));
+    @include offerSection(url("../../img/for_kids.jpg"));
   }
 
   &__accesories {
-    @include offerSection(url(img/for_accesories.png));
+    @include offerSection(url("../../img/for_accesories.png"));
     min-height: 180px;
   }
 
