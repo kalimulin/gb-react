@@ -1,9 +1,9 @@
 import React, {useContext, useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 import Header from "../../components/Header/Header"
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footer/Footer"
 import {CartContext} from "../../contexts/CartContext"
-import products from "../../components/productsData"
+import products from "../../data"
 
 import {ReactComponent as CloseIcon} from "../../img/close_icon.svg"
 import "./Cart.scss"

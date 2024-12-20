@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 
-import { HandySvg } from "handy-svg";
-import add_to_cart_btn from "../img/add_to_cart_btn.svg";
+import { HandySvg } from "handy-svg"
+import add_to_cart_btn from "../../img/add_to_cart_btn.svg"
 
-import { CartContext } from "../contexts/CartContext"; // Импорт контекста корзины
+import { CartContext } from "../../contexts/CartContext"
+
+import "./ProductItem.scss"
 
 function ProductItem({ id, title, description, price, imageUrl }) {
-  // Получение функции добавления товара в корзину из CartContext
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext)
 
-  // Вызов функции добавления в корзину
   const handleAddToCart = () => {
-    addToCart(id);
-  };
+    addToCart(id)
+  }
 
   return (
     <div className="item">
@@ -32,7 +32,7 @@ function ProductItem({ id, title, description, price, imageUrl }) {
         <p className="item_price">${price.toFixed(2)}</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default ProductItem;
+export default ProductItem
