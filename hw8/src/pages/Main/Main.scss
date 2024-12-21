@@ -1,46 +1,110 @@
-@import "../../scss/vars";
 @import "../../scss/mixins";
 
-.top_brand {
-  background-color: #F1E4E6;
-  display: flex;
-  margin-bottom: 65px;
-}
+$widthDesktopSite: 1140px;
+$colorHighlightedItems: #F16D7F;
+$colorCommonDarkItems: #222222;
 
-.top_brand_img {
-  min-width: 49%;
+.banner {
+  height: 363px;
   display: flex;
-  justify-content: flex-end;
-}
-
-.top_brand_title {
-  display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 18px;
-}
+  background-color: var(--VENUS_PINK);
 
-.tb_large {
-  color: $colorCommonDarkItems;
-  font-family: Lato;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-}
-
-.tb_small {
-  color: $colorCommonDarkItems;
-  font-family: Lato;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  &__highlighted {
-    color: $colorHighlightedItems;
+  @include tablet {
+    justify-content: space-between;
+    align-items: stretch;
+    height: 369px;
   }
 
+  @include desktop {
+    height: auto;
+  }
+}
+
+.banner__left {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-basis: 50%;
+    flex-grow: 0;
+  }
+
+  @include desktop {
+    max-width: 50%;
+  }
+}
+
+.banner__left-img {
+  max-height: 100%;
+  height: 100%;
+  width: auto;
+
+  @include desktop {
+    height: 764px;
+  }
+}
+
+.banner__text-block {
+  position: relative;
+  padding-left: 28px;
+  line-height: 1.1;
+
+  @include tablet {
+    align-self: center;
+    margin: 0 auto;
+    line-height: 1.35;
+  }
+
+  @include desktop {
+    margin-right: auto;
+    margin-left: 63px;
+    padding-left: 28px;
+    line-height: 1.25;
+  }
+
+  &::before {
+    content: "";
+    width: 12px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--STRAWBERRY_PINK);
+  }
+}
+
+.banner__title {
+  font-size: 38px;
+  font-weight: 900;
+
+  @include tablet {
+    font-size: 44px;
+  }
+
+  @include desktop {
+    font-size: 42px;
+  }
+}
+
+.banner__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+
+  @include tablet {
+    font-size: 24px;
+  }
+
+  @include desktop {
+    font-size: 32px;
+  }
+
+  span {
+    color: var(--STRAWBERRY_PINK);
+  }
 }
 
 .offers {
@@ -55,50 +119,102 @@
   gap: 30px;
 }
 
-.offer {
-  width: 100%;
-  min-height: 260px;
+.sections {
+  padding: 64px 0;
+
+  @include tablet {
+    padding: 20px 0 154px;
+  }
+
+  @include desktop {
+    padding: 64px 0 96px;
+  }
+
+  & > .container {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.section {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  aspect-ratio: 343/247;
+  background-size: 100%;
+  background-position: center;
+  transition: background-size .3s;
 
-  &__for_women {
-    @include offerSection(url("../../img/for_women.png"));
+  @include tablet {
+    width: 232px;
+    height: 167px;
   }
 
-  &__for_men {
-    @include offerSection(url("../../img/for_men.jpg"));
+  @include desktop {
+    width: 360px;
+    height: 260px;
   }
 
-  &__for_kids {
-    @include offerSection(url("../../img/for_kids.jpg"));
+  & + & {
+    margin-top: 32px;
+
+    @include tablet {
+      margin-top: unset;
+    }
   }
 
-  &__accesories {
-    @include offerSection(url("../../img/for_accesories.png"));
-    min-height: 180px;
+  &:hover {
+    background-size: 110%;
   }
-
 }
 
-.offer_subtitle {
-  color: #FFF;
+.section:last-child {
+  aspect-ratio: 343/111;
+
+  @include tablet {
+    margin-top: 19px;
+    width: 100%;
+    height: 116px;
+  }
+
+  @include desktop {
+    height: 180px;
+    margin-top: 30px;
+  }
+
+  &:hover {
+    background-size: 105%;
+  }
+}
+
+$sections: for_women, for_men, for_kids, for_accesories;
+
+@each $section in $sections {
+  .section_#{$section} {
+    background-image: url("../..//img/#{$section}.png");
+  }
+}
+
+.section__text {
   text-align: center;
-  font-family: Lato;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+
+  @include tablet {
+    line-height: 1.4;
+  }
 }
 
-.offer_title {
-  color: $colorHighlightedItems;
-  font-family: Lato;
+.section__text1 {
+  font-size: 16px;
+  color: var(--WHITE);
+}
+
+.section__text2 {
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  color: var(--STRAWBERRY_PINK);
 }
 
 .products {

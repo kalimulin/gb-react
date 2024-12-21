@@ -17,41 +17,43 @@ function MainPage() {
   return (
     <div className="home-page">
       <div className="content">
-        <div className="top_brand">
-          <div className="top_brand_img">
-            <img className="top_brand_pic" src={top_brand_img} alt="Man" />
+        <section className="banner">
+          <div className="banner__left">
+            <img src={top_brand_img} className="banner__left-img" alt="banner"/>
           </div>
-          <div className="top_brand_title">
-            <HandySvg src={top_brand_title} width="12" height="93" />
-            <div className="top_brand_text">
-              <h1 className="tb_large">THE BRAND</h1>
-              <h2 className="tb_small">
-                OF LUXERIOUS
-                <span className="tb_small tb_small__highlighted">FASHION</span>
-              </h2>
-            </div>
+          <div className="banner__text-block">
+            <div className="banner__title">THE BRAND</div>
+            <div className="banner__subtitle">OF LUXERIOUS <span>FASHION</span></div>
           </div>
-        </div>
-        <div className="offers center">
-          <div className="small_offers">
-            <div className="offer offer__for_women">
-              <h4 className="offer_subtitle">30% OFF</h4>
-              <h3 className="offer_title">FOR WOMEN</h3>
-            </div>
-            <div className="offer offer__for_men">
-              <h4 className="offer_subtitle">HOT DEAL</h4>
-              <h3 className="offer_title">FOR MEN</h3>
-            </div>
-            <div className="offer offer__for_kids">
-              <h4 className="offer_subtitle">NEW ARRIVALS</h4>
-              <h3 className="offer_title">FOR KIDS</h3>
-            </div>
+        </section>
+        <section className="sections">
+          <div className="container">
+            <Link to="/catalog" className="sections__item section section_for_women">
+              <div className="section__text">
+                <div className="section__text1">30% OFF</div>
+                <div className="section__text2">FOR WOMEN</div>
+              </div>
+            </Link>
+            <Link to="/catalog" className="sections__item section section_for_men">
+              <div className="section__text">
+                <div className="section__text1">HOT DEAL</div>
+                <div className="section__text2">FOR MEN</div>
+              </div>
+            </Link>
+            <Link to="/catalog" className="sections__item section section_for_kids">
+              <div className="section__text">
+                <div className="section__text1">NEW ARRIVALS</div>
+                <div className="section__text2">FOR KIDS</div>
+              </div>
+            </Link>
+            <Link to="/catalog" className="sections__item section section_for_accesories">
+              <div className="section__text">
+                <div className="section__text1">LUXIROUS &amp; TRENDY</div>
+                <div className="section__text2">ACCESORIES</div>
+              </div>
+            </Link>
           </div>
-          <div className="offer offer__accesories">
-            <h4 className="offer_subtitle">LUXIROUS & TRENDY</h4>
-            <h3 className="offer_title">ACCESORIES</h3>
-          </div>
-        </div>
+        </section>
         <div className="products center">
           <p className="products_title">Fetured Items</p>
           <p className="products_text">
@@ -79,7 +81,7 @@ function MainPage() {
           <div className="features center">
             <figure>
               <div className="feature">
-                <FeatureDelivery_icon className="feature_icon" />
+                <FeatureDelivery_icon className="feature_icon"/>
                 <h4 className="feature_title">Free Delivery</h4>
                 <p className="feature_description">
                   Worldwide delivery on all. Authorit tively morph
@@ -89,7 +91,7 @@ function MainPage() {
             </figure>
             <figure>
               <div className="feature">
-                <FeatureDiscount_icon className="feature_icon" />
+                <FeatureDiscount_icon className="feature_icon"/>
                 <h4 className="feature_title">Sales & discounts</h4>
                 <p className="feature_description">
                   Worldwide delivery on all. Authorit tively morph
@@ -99,7 +101,7 @@ function MainPage() {
             </figure>
             <figure>
               <div className="feature">
-                <FeatureQuality_icon className="feature_icon" />
+                <FeatureQuality_icon className="feature_icon"/>
                 <h4 className="feature_title">Quality assurance</h4>
                 <p className="feature_description">
                   Worldwide delivery on all. Authorit tively morph

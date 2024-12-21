@@ -1,6 +1,5 @@
 import React from 'react'
 
-import {HandySvg} from 'handy-svg'
 import social_facebook from "../../img/social_facebook.svg"
 import social_instagram from "../../img/social_instagram.svg"
 import social_pinterest from "../../img/social_pinterest.svg"
@@ -52,7 +51,6 @@ function Footer() {
         </div>
       </footer>
     </>
-
   )
 }
 
