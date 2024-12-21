@@ -1,75 +1,58 @@
+@import 'scss/reset';
 @import 'scss/vars';
 @import 'scss/mixins';
 
 @import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Murecho:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Unbounded:wght@200..900&display=swap');
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+html {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-p {
-  padding: 0;
-  margin: 0;
-}
-
-summary {
-  display: block;
-}
-
-summary::-webkit-details-marker {
-  display: none;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: var(--NINJA);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+input {
+  border: 0;
+  outline: 0;
+}
+
+.landing {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--BLACK_OUT);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 480px;
+
+  @include tablet {
+    padding: 0;
+    max-width: 736px;
+  }
+
+  @include desktop {
+    max-width: 1140px;
+  }
+}
+
+.landing__header {
+  height: 74px;
   display: flex;
-  flex-direction: column;
-}
-
-.box-content {
-  overflow: hidden;
-}
-
-.content {
-  flex: 1;
-}
-
-.center {
-  padding-left: calc(50% - $widthDesktopSite / 2);
-  padding-right: calc(50% - $widthDesktopSite / 2);
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .center {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 767.98px) {
-  .center {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
 }

@@ -1,6 +1,6 @@
+
 import { Link } from "react-router-dom"
 
-import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import ProductItem from "../../components/ProductItem/ProductItem"
 
@@ -18,8 +18,7 @@ import "./Main.scss"
 
 function MainPage() {
   return (
-    <div className="box-content">
-      <Header />
+    <div className="home-page">
       <div className="content">
         <div className="top_brand">
           <div className="top_brand_img">

@@ -8,8 +8,7 @@ import "./Registration.scss"
 
 function RegistrationPage() {
     return (
-        <div className="box-content">
-            <Header />
+        <div className="registration-page">
             <div className="content">
                 <div className="head center">
                     <h1 className="head_title">REGISTRATION</h1>
@@ -42,7 +41,7 @@ function RegistrationPage() {
                                         id="male_button"
                                         name="user_sex"
                                     />
-                                    <label for="male_button">Male</label>
+                                    <label htmlFor="male_button">Male</label>
                                 </div>
                                 <div className="reg-box__sex-selector">
                                     <input
@@ -51,7 +50,7 @@ function RegistrationPage() {
                                         id="female_button"
                                         name="user_sex"
                                     />
-                                    <label for="female_button">Female</label>
+                                    <label htmlFor="female_button">Female</label>
                                 </div>
                             </div>
                             <div className="reg-box__reg-form">

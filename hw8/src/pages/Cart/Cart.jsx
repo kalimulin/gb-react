@@ -36,8 +36,7 @@ const CartPage = () => {
   }
 
   return (
-    <div className="box-content">
-      <Header/>
+    <div className="cart-page">
       <div className="content">
         <div className="head center">
           <h1 className="head_title">SHOPPING CART</h1>

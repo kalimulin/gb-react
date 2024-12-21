@@ -59,8 +59,7 @@ function CatalogPage() {
   }
 
   return (
-    <div className="box-content">
-      <Header/>
+    <div className="catalog-page">
       <div className="content">
         <div className="head center">
           <h1 className="head_title">NEW ARRIVALS</h1>
