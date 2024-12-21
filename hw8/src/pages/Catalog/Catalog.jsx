@@ -1,6 +1,5 @@
 import React, {useState} from "react"
 
-import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import ProductItem from "../../components/ProductItem/ProductItem"
 
@@ -13,11 +12,11 @@ import products from "../../data"
 
 import "./Catalog.scss"
 
-function pagination(array, pageSize, pageNumber) {
+const pagination = (array, pageSize, pageNumber) => {
   return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize)
 }
 
-function CatalogPage() {
+const CatalogPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedSizes, setSelectedSizes] = useState([])
 

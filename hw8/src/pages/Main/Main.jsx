@@ -1,18 +1,15 @@
-
 import { Link } from "react-router-dom"
-
-import Footer from "../../components/Footer/Footer"
 import ProductItem from "../../components/ProductItem/ProductItem"
+import { HandySvg } from "handy-svg"
+
+import products from "../../data"
 
 import top_brand_img from "../../img/top_brand_img.png"
-
-import { HandySvg } from "handy-svg"
 import top_brand_title from "../../img/top_brand_title.svg"
 
 import { ReactComponent as FeatureDelivery_icon } from "../../img/feature_icon1.svg"
 import { ReactComponent as FeatureDiscount_icon } from "../../img/feature_icon2.svg"
 import { ReactComponent as FeatureQuality_icon } from "../../img/feature_icon3.svg"
-import products from "../../data"
 
 import "./Main.scss"
 
@@ -113,7 +110,6 @@ function MainPage() {
           </div>
         </section>
       </div>
-      <Footer />
     </div>
   )
 }

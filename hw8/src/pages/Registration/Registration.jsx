@@ -1,6 +1,3 @@
-import Header from "../../components/Header/Header"
-import Footer from "../../components/Footer/Footer"
-
 import { HandySvg } from "handy-svg"
 import right_arrow_icon from "../../img/right_arrow.svg"
 
@@ -93,7 +90,6 @@ function RegistrationPage() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

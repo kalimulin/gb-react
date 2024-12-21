@@ -1,61 +1,58 @@
 import React from 'react'
 
-import creator from "../../img/creator.png"
-
 import {HandySvg} from 'handy-svg'
-import social_net_link1 from "../../img/social_net_link1.svg"
-import social_net_link2 from "../../img/social_net_link2.svg"
+import social_facebook from "../../img/social_facebook.svg"
+import social_instagram from "../../img/social_instagram.svg"
+import social_pinterest from "../../img/social_pinterest.svg"
+import social_twitter from "../../img/social_twitter.svg"
+import creator from "../../img/creator.png"
 
 import "./Footer.scss"
 
 function Footer() {
   return (
-    <footer className="footer">
-      <section>
-        <div className="subscride_info center">
-          <figure>
-            <div className="creator">
-              <img src={creator} alt="Creator's photo"/>
-              <p className="creator_text">
-                “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
-                <i> a pulvinar purus condimentum</i>
-                “
-              </p>
+    <>
+      <section className="review">
+        <div className="container">
+          <div>
+            <div className="review__ava">
+              <img
+                src={creator} alt="user"
+              />
             </div>
-          </figure>
-          <section>
-            <div className="subscribe_container">
-              <div className="subscribe_text">
-                <h3 className="subscribe_title">SUBSCRIBE</h3>
-                <h4 className="subscribe_subtitle">FOR OUR NEWLETTER AND PROMOTION</h4>
-              </div>
-              <div className="subscribe_form">
-                <input
-                  className="subscribe_form_input"
-                  type="email"
-                  name="email"
-                  placeholder="Enter Your Email"
-                />
-                <a className="subscribe_form_button" href="#">Subscribe</a>
-              </div>
-            </div>
-          </section>
-        </div>
-      </section>
-      <section>
-        <div className="contacts center">
-          <p className="copyright_text">© 2023  Brand  All Rights Reserved.</p>
-          <div className="social_nets_bar">
-            <div className="social_net_item">
-              <HandySvg src={social_net_link1} className="social_net_link" width="13" height="16"/>
-            </div>
-            <div className="social_net_item">
-              <HandySvg src={social_net_link2} className="social_net_link" width="17" height="16"/>
-            </div>
+            <div className="review__text">Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum</div>
+          </div>
+          <div className="subscribe">
+            <div className="subscribe__title">SUBSCRIBE</div>
+            <div className="subscribe__subtitle">FOR OUR NEWLETTER AND PROMOTION</div>
+            <form className="subscribe__email">
+              <input type="email" className="subscribe__email-field" placeholder="Enter Your Email" />
+              <div className="subscribe__email-submit">Subscribe</div>
+            </form>
           </div>
         </div>
       </section>
-    </footer>
+      <footer className="footer">
+        <div className="container">
+          <div className="footer__socials">
+            <div className="footer__social">
+              <img src={social_facebook} className="footer__social-img" alt="social"/>
+            </div>
+            <div className="footer__social">
+              <img src={social_instagram} className="footer__social-img" alt="social"/>
+            </div>
+            <div className="footer__social">
+              <img src={social_pinterest} className="footer__social-img" alt="social"/>
+            </div>
+            <div className="footer__social">
+              <img src={social_twitter} className="footer__social-img" alt="social"/>
+            </div>
+          </div>
+          <div className="footer__copyright">© 2024 Brand All Rights Reserved.</div>
+        </div>
+      </footer>
+    </>
+
   )
 }
 

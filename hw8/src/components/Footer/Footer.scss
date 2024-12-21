@@ -1,210 +1,165 @@
-@import "../../scss/vars";
+@import "../../scss/mixins";
 
-.subscride_info {
-  height: 448px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #F4F4F4;
-  background-image: url("../../img/photo_subscribe.jpg");
-  background-repeat: no-repeat;
+.review {
+  padding: 64px 0 110px;
+  color: var(--VERIFIED_BLACK);
+  text-align: center;
+  line-height: 1 ;
   background-size: cover;
+  background-position: center bottom;
+  background-image: url("../../img/photo_subscribe.jpg");
+
+  @include tablet {
+    padding: 64px 0 140px;
+    background-position: center;
+  }
+
+  @include desktop {
+    padding: 97px 0 126px;
+  }
+
+  & > .container {
+    @include desktop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
 }
 
-.creator {
-  max-width: 360px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
+.review__ava {
+  margin: 0 auto;
+  width: 96px;
 }
 
-.creator_text {
-  color: $colorCommonDarkItems;
-  text-align: center;
-  font-family: Lato, sans-serif;
+.review__text {
+  margin: 30px auto 0;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  height: 99px;
+  font-style: italic;
+
+  @include tablet {
+    max-width: 360px;
+  }
 }
 
-.subscribe_container {
-  max-width: 557px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+// ------------------ Subscribe ---------------------
+
+.subscribe {
+  margin-top: 59px;
+
+  @include tablet {
+    margin-top: 56px;
+  }
+
+  @include desktop {
+    margin-top: unset;
+    width: 560px;
+  }
 }
 
-.subscribe_text {
-  margin-bottom: 32px;
-}
-
-.subscribe_title {
-  color: $colorCommonDarkItems;
-  text-align: center;
-  font-family: Lato;
+.subscribe__title {
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
-  line-height: 167.2%;
 }
 
-.subscribe_subtitle {
-  color: $colorCommonDarkItems;
-  font-family: Lato;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 167.2%;
+.subscribe__subtitle {
+  font-size: 14px;
+  margin-top: 4px;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include desktop {
+    margin-top: 8px;
+  }
 }
 
-.subscribe_form {
-  width: 100%;
+.subscribe__email {
+  margin-top: 22px;
   display: flex;
-  align-items: center;
+  height: 48px;
+  font-size: 14px;
+  line-height: 48px;
+
+  @include tablet {
+    margin: 27px auto 0;
+    width: 356px;
+  }
+
+  @include desktop {
+    margin-top: 32px;
+    width: 356px;
+    font-size: 14px;
+  }
+}
+
+.subscribe__email-field {
+  padding-left: 24px;
+  border-radius: 24px 0 0 24px;
+  background-color: var(--JUPITER);
+  flex-grow: 1;
+}
+
+.subscribe__email-submit {
+  width: 95px;
+  flex-shrink: 1;
+  background-color: var(--STRAWBERRY_PINK);
+  border-radius: 0 24px 24px 0;
+  color: var(--WHITE);
+  cursor: pointer;
+
+  @include tablet {
+    width: 100px;
+  }
+}
+
+.footer {
+  padding: 43px 0 9px;
+  color: var(--WHITEOUT);
+  background-color: var(--VERIFIED_BLACK);
+
+  @include tablet {
+    padding: 24px 0;
+  }
+
+  & > .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+}
+
+.footer__socials {
+  display: flex;
   justify-content: center;
+  gap: 7px;
 }
 
-.subscribe_form_input {
-  width: calc(100% - 100px);
-  color: $colorCommonDarkItems;
-  background-color: #E1E1E1;
-  font-family: Lato;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  opacity: 0.671;
-  padding: 1rem;
-  border: none;
-  border-top-left-radius: 49px;
-  border-bottom-left-radius: 49px;
-}
-
-.subscribe_form_button {
-  max-width: 100px;
-  background-color: $colorHighlightedItems;
-  color: #FFFFFF;
-  text-align: center;
-  font-family: Lato;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  padding: 1rem;
-  border: none;
-  border-top-right-radius: 49px;
-  border-bottom-right-radius: 49px;
-  transition: 0.5s
-}
-
-.subscribe_form_button:hover {
-  background-color: $colorCommonDarkItems;
-}
-
-.contacts {
-  padding: 30px 0;
+.footer__social {
   display: flex;
-  justify-content: space-between;
-  background-color: $colorCommonDarkItems;
-}
-
-.copyright_text {
-  color: #FBFBFB;
-  font-family: Lato;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.social_nets_bar {
-  display: flex;
-  gap: 8px;
-  justify-content: space-between;
-}
-
-.social_net_item {
-  background-color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
   width: 32px;
   height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
+  background-color: var(--WHITE);
 }
 
-.social_net_item:hover {
-  background-color: $colorHighlightedItems;
+.footer__social-img {
+  width: auto;
+  height: 18px;
 }
 
-.social_net_item:hover .social_net_link path {
-  fill: white;
-}
+.footer__copyright {
+  margin-top: 40px;
+  font-size: 16px;
 
-@media (min-width: 768px) and (max-width: 1024px) {
-
-  .subscride_info {
-    flex-direction: column;
-    height: 600px;
-    gap: 48px;
-    padding-top: 64px;
-    justify-content: normal;
-    background-position-x: left;
-    background-position-y: bottom;
-  }
-
-  .copyright_text {
-    margin-left: 16px;
-  }
-
-  .social_nets_bar {
-    margin-right: 16px;
-  }
-
-}
-
-@media (min-width: 320px) and (max-width: 767.98px) {
-
-  .subscride_info {
-    flex-direction: column;
-    height: 550px;
-    gap: 59px;
-    padding-top: 64px;
-    justify-content: normal;
-    background-position-x: left;
-    background-position-y: bottom;
-  }
-
-  .creator_text {
-    font-size: 18px;
-    height: auto;
-  }
-
-  .subscribe_text {
-    margin-bottom: 22px;
-  }
-
-  .subscribe_title {
-    line-height: 153.2%;
-  }
-
-  .subscribe_subtitle {
-    font-size: 14px;
-    line-height: 153.2%;
-  }
-
-  .contacts {
-    padding: 9px;
-    height: 143px;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: normal;
-  }
-
-  .social_nets_bar {
-    margin-bottom: 40px;
+  @include tablet {
+    margin-top: unset;
   }
 }

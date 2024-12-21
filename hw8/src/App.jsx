@@ -8,6 +8,7 @@ import RegistrationPage from "./pages/Registration/Registration"
 import Header from "./components/Header/Header";
 
 import "./style.scss"
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/cart" element={<CartPage/>}/>
         <Route path="/registration" element={<RegistrationPage/>}/>
       </Routes>
+      <Footer />
     </div>
   )
 }
