@@ -1,11 +1,9 @@
 import React, {useState} from "react"
+import {HandySvg} from "handy-svg"
 
-import Footer from "../../components/Footer/Footer"
 import ProductItem from "../../components/ProductItem/ProductItem"
 
 import {ReactComponent as FilterIcon} from "../../img/filter_icon.svg"
-
-import {HandySvg} from "handy-svg"
 import drop_down_arrow from "../../img/drop-down_arrow.svg"
 
 import products from "../../data"
@@ -258,7 +256,6 @@ const CatalogPage = () => {
           </div>
         </div>
       </div>
-      <Footer/>
     </div>
   )
 }

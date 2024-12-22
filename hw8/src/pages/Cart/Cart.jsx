@@ -1,6 +1,5 @@
 import React, {useContext, useState, useEffect} from "react"
 import {Link} from "react-router-dom"
-import Footer from "../../components/Footer/Footer"
 import {CartContext} from "../../contexts/CartContext"
 import products from "../../data"
 
@@ -157,7 +156,6 @@ const CartPage = () => {
           </div>
         </div>
       </div>
-      <Footer/>
     </div>
   )
 }

@@ -130,8 +130,8 @@ const Header = () => {
           <User_icon className="user_icon"/>
         </Link>
         <Link className="header__cart" to="/cart">
-          <Cart_icon className="cart_icon"/>
-          {totalItems > 0 && <span className="cart_count">{totalItems}</span>}
+          <Cart_icon />
+          {totalItems > 0 && <span className="header__cart-count">{totalItems}</span>}
         </Link>
         <Menu showMenu={showMenu} handleMenuClick={handleMenuClick}/>
       </div>

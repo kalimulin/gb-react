@@ -49,6 +49,7 @@
 }
 
 .header__cart {
+  position: relative;
   cursor: pointer;
   height: 29px;
   margin-left: 42px;
@@ -56,6 +57,20 @@
   @include mobile-only {
     display: none;
   }
+}
+
+.header__cart-count {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-color: var(--PONCEAU);
+  border-radius: 50%;
+  color: var(--WHITE);
+  text-align: center;
+  line-height: 18px;
+  transform: translate(50%, -50%);
 }
 
 .header__popup-menu {
