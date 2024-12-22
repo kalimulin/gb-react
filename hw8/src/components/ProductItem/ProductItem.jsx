@@ -7,7 +7,8 @@ import { CartContext } from "../../contexts/CartContext"
 
 import "./ProductItem.scss"
 
-const ProductItem = ({ id, title, description, price, imageUrl }) => {
+const ProductItem = ({ product }) => {
+  const {id, title, description, price, imageUrl} = product
   const { addToCart } = useContext(CartContext)
 
   const handleAddToCart = () => {

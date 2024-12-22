@@ -12,6 +12,7 @@ import { ReactComponent as FeatureDiscount_icon } from "../../img/feature_icon2.
 import { ReactComponent as FeatureQuality_icon } from "../../img/feature_icon3.svg"
 
 import "./Main.scss"
+import ProductList from "../../components/ProductList/ProductList";
 
 function MainPage() {
   return (
@@ -54,29 +55,19 @@ function MainPage() {
             </Link>
           </div>
         </section>
-        <div className="products center">
-          <p className="products_title">Fetured Items</p>
-          <p className="products_text">
-            Shop for items based on what we featured in this week
-          </p>
-          <div className="product_items">
-            {products.slice(6).map((product) => (
-              <ProductItem
-                key={product.id}
-                id={product.id}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-                imageUrl={product.imageUrl}
-              />
-            ))}
-          </div>
-          <div className="products_button">
-            <Link className="browse_button" to="/catalog">
-              Browse All Product
+        <section className="featured">
+          <div className="container">
+            <div className="featured__title">Featured Items</div>
+            <div className="featured__subtitle">Shop for items based on what we featured in this week</div>
+            <div className="featured__product-list">
+              <ProductList products={products} />
+            </div>
+            <Link  to="/catalog" className="featured__browse-all">
+              <span>Browse All Product</span>
             </Link>
           </div>
-        </div>
+        </section>
+
         <section>
           <div className="features center">
             <figure>

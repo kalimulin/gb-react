@@ -217,6 +217,67 @@ $sections: for_women, for_men, for_kids, for_accesories;
   color: var(--STRAWBERRY_PINK);
 }
 
+.featured {
+  padding-bottom: 96px;
+  text-align: center;
+  line-height: 1.4;
+
+  @include tablet {
+    padding-bottom: 64px;
+  }
+
+  @include desktop {
+    padding-bottom: 95px;
+  }
+}
+
+.featured__title {
+  font-size: 30px;
+}
+
+.featured__subtitle {
+  font-size: 14px;
+  color: var(--COLD_GREY);
+}
+
+.featured__product-list {
+  margin-top: 64px;
+
+  @include tablet {
+    margin-top: 72px;
+  }
+}
+
+.featured__browse-all {
+  margin: 40px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 212px;
+  height: 48px;
+  font-size: 16px;
+  color: var(--PONCEAU);
+  border: 1px solid var(--POMPELMO);
+  transition: background-color .3s, color .3s;
+
+  @include tablet {
+    margin-top: 32px;
+  }
+
+  @include desktop {
+    margin-top: 48px;
+  }
+
+  &:hover {
+    background-color: var(--POMPELMO);
+    color: var(--WHITE);
+  }
+}
+
+
+
+
+
 .products {
   display: flex;
   align-items: center;
