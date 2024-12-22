@@ -3,7 +3,7 @@ import right_arrow_icon from "../../img/right_arrow.svg"
 
 import "./Registration.scss"
 
-function RegistrationPage() {
+const RegistrationPage = () => {
     return (
         <div className="registration-page">
             <div className="content">

@@ -1,18 +1,16 @@
 import { Link } from "react-router-dom"
-import ProductItem from "../../components/ProductItem/ProductItem"
-import { HandySvg } from "handy-svg"
+
+import ProductList from "../../components/ProductList/ProductList"
 
 import products from "../../data"
 
 import top_brand_img from "../../img/top_brand_img.png"
-import top_brand_title from "../../img/top_brand_title.svg"
 
-import { ReactComponent as FeatureDelivery_icon } from "../../img/feature_icon1.svg"
-import { ReactComponent as FeatureDiscount_icon } from "../../img/feature_icon2.svg"
-import { ReactComponent as FeatureQuality_icon } from "../../img/feature_icon3.svg"
+import { ReactComponent as FeatureDeliveryIcon } from "../../img/feature_icon1.svg"
+import { ReactComponent as FeatureDiscountIcon } from "../../img/feature_icon2.svg"
+import { ReactComponent as FeatureQualityIcon } from "../../img/feature_icon3.svg"
 
 import "./Main.scss"
-import ProductList from "../../components/ProductList/ProductList";
 
 function MainPage() {
   return (
@@ -72,7 +70,7 @@ function MainPage() {
           <div className="features center">
             <figure>
               <div className="feature">
-                <FeatureDelivery_icon className="feature_icon"/>
+                <FeatureDeliveryIcon className="feature_icon"/>
                 <h4 className="feature_title">Free Delivery</h4>
                 <p className="feature_description">
                   Worldwide delivery on all. Authorit tively morph
@@ -82,7 +80,7 @@ function MainPage() {
             </figure>
             <figure>
               <div className="feature">
-                <FeatureDiscount_icon className="feature_icon"/>
+                <FeatureDiscountIcon className="feature_icon"/>
                 <h4 className="feature_title">Sales & discounts</h4>
                 <p className="feature_description">
                   Worldwide delivery on all. Authorit tively morph
@@ -92,7 +90,7 @@ function MainPage() {
             </figure>
             <figure>
               <div className="feature">
-                <FeatureQuality_icon className="feature_icon"/>
+                <FeatureQualityIcon className="feature_icon"/>
                 <h4 className="feature_title">Quality assurance</h4>
                 <p className="feature_description">
                   Worldwide delivery on all. Authorit tively morph

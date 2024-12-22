@@ -1,7 +1,8 @@
 import React, {useState} from "react"
 import {HandySvg} from "handy-svg"
 
-import ProductItem from "../../components/ProductItem/ProductItem"
+import ProductList from "../../components/ProductList/ProductList"
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs"
 
 import {ReactComponent as FilterIcon} from "../../img/filter_icon.svg"
 import drop_down_arrow from "../../img/drop-down_arrow.svg"
@@ -57,24 +58,8 @@ const CatalogPage = () => {
 
   return (
     <div className="catalog-page">
-      <div className="content">
-        <div className="head center">
-          <h1 className="head_title">NEW ARRIVALS</h1>
-          <nav className="breadcrums">
-            <a href="/" className="breadcrums__link">
-              HOME
-            </a>
-            <a href="#" className="breadcrums__link">
-              MEN
-            </a>
-            <a
-              href="#"
-              className="breadcrums__link breadcrums__link__highlight"
-            >
-              NEW ARRIVALS
-            </a>
-          </nav>
-        </div>
+      <Breadcrumbs title="NEW ARRIVALS" path="HOME / MEN / <span>NEW ARRIVALS</span>" />
+      <div className="container">
         <div className="filter-sorter center">
           <div className="filter-block">
             <details className="filter">
@@ -223,36 +208,24 @@ const CatalogPage = () => {
             </details>
           </div>
         </div>
-        <div className="products spec_catalog center">
-          <div className="product_items product_items_spec">
-            {displayedProducts.map((product) => (
-              <ProductItem
-                key={product.id}
-                id={product.id}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-                imageUrl={product.imageUrl}
-              />
-            ))}
+        <div className="container">
+          <div className="catalog-page__products">
+            <ProductList products={displayedProducts}/>
           </div>
-
-          <div className="catalog_nav">
-            <nav className="catalog_nav__box">
-              <div className="catalog_nav__pagination">
-                {
-                  totalPages().map((number) => (
-                    <a
-                      key={number}
-                      onClick={() => handlePageChange(number)}
-                      className="catalog_nav__link"
-                    >
-                      {number}
-                    </a>
-                  ))
-                }
-              </div>
-            </nav>
+          <div className="catalog-page__pagination">
+            <div className="pagination">
+              {
+                totalPages().map((number) => (
+                  <a
+                    key={number}
+                    onClick={() => handlePageChange(number)}
+                    className="pagination__item"
+                  >
+                    {number}
+                  </a>
+                ))
+              }
+            </div>
           </div>
         </div>
       </div>

@@ -55,3 +55,47 @@ input {
   height: 74px;
   display: flex;
 }
+
+.pagination {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--MERCURY);
+  border-radius: 4px;
+}
+
+.pagination__item {
+  min-width: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--STRAWBERRY_PINK);
+  }
+
+  &_active {
+    color: var(--STRAWBERRY_PINK);
+  }
+}
+
+.pagination__arrow {
+  width: 8px;
+  cursor: pointer;
+
+  &_right {
+    margin-left: 8px;
+    transform: scale(-1, 1);
+  }
+}
+
+.pagination__last {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--STRAWBERRY_PINK);
+  }
+}

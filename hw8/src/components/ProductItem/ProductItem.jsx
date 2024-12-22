@@ -26,7 +26,7 @@ const ProductItem = ({ product }) => {
           </div>
         </div>
       </div>
-      <Link to="/product" className="product__item-text">
+      <Link to={`/product/${id}`} className="product__item-text">
         <div className="product__item-title">{title}</div>
         <div className="product__item-desc">{description}</div>
         <div className="product__item-price">${price.toFixed(2)}</div>
