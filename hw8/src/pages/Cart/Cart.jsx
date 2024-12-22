@@ -1,12 +1,11 @@
 import React, {useContext, useState, useEffect} from "react"
 import {Link} from "react-router-dom"
-import Header from "../../components/Header/Header"
-import Footer from "../../components/Footer/Footer"
 import {CartContext} from "../../contexts/CartContext"
 import products from "../../data"
 
 import {ReactComponent as CloseIcon} from "../../img/close_icon.svg"
 import "./Cart.scss"
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 const CartPage = () => {
   const {cartItems, removeFromCart, updateCartItemQuantity, clearCart} = useContext(CartContext)
@@ -36,12 +35,9 @@ const CartPage = () => {
   }
 
   return (
-    <div className="box-content">
-      <Header/>
-      <div className="content">
-        <div className="head center">
-          <h1 className="head_title">SHOPPING CART</h1>
-        </div>
+    <div className="cart-page">
+      <Breadcrumbs title='SHOPPING CART' />
+      <div className="container">
         <div className="cart-box center">
           {cartItems.length === 0 ? (
             <h2>Your cart is empty</h2>
@@ -159,7 +155,6 @@ const CartPage = () => {
           </div>
         </div>
       </div>
-      <Footer/>
     </div>
   )
 }

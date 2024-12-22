@@ -1,89 +1,76 @@
 import { Link } from "react-router-dom"
 
-import Header from "../../components/Header/Header"
-import Footer from "../../components/Footer/Footer"
-import ProductItem from "../../components/ProductItem/ProductItem"
+import ProductList from "../../components/ProductList/ProductList"
+
+import products from "../../data"
 
 import top_brand_img from "../../img/top_brand_img.png"
 
-import { HandySvg } from "handy-svg"
-import top_brand_title from "../../img/top_brand_title.svg"
-
-import { ReactComponent as FeatureDelivery_icon } from "../../img/feature_icon1.svg"
-import { ReactComponent as FeatureDiscount_icon } from "../../img/feature_icon2.svg"
-import { ReactComponent as FeatureQuality_icon } from "../../img/feature_icon3.svg"
-import products from "../../data"
+import { ReactComponent as FeatureDeliveryIcon } from "../../img/feature_icon1.svg"
+import { ReactComponent as FeatureDiscountIcon } from "../../img/feature_icon2.svg"
+import { ReactComponent as FeatureQualityIcon } from "../../img/feature_icon3.svg"
 
 import "./Main.scss"
 
 function MainPage() {
   return (
-    <div className="box-content">
-      <Header />
+    <div className="home-page">
       <div className="content">
-        <div className="top_brand">
-          <div className="top_brand_img">
-            <img className="top_brand_pic" src={top_brand_img} alt="Man" />
+        <section className="banner">
+          <div className="banner__left">
+            <img src={top_brand_img} className="banner__left-img" alt="banner"/>
           </div>
-          <div className="top_brand_title">
-            <HandySvg src={top_brand_title} width="12" height="93" />
-            <div className="top_brand_text">
-              <h1 className="tb_large">THE BRAND</h1>
-              <h2 className="tb_small">
-                OF LUXERIOUS
-                <span className="tb_small tb_small__highlighted">FASHION</span>
-              </h2>
-            </div>
+          <div className="banner__text-block">
+            <div className="banner__title">THE BRAND</div>
+            <div className="banner__subtitle">OF LUXERIOUS <span>FASHION</span></div>
           </div>
-        </div>
-        <div className="offers center">
-          <div className="small_offers">
-            <div className="offer offer__for_women">
-              <h4 className="offer_subtitle">30% OFF</h4>
-              <h3 className="offer_title">FOR WOMEN</h3>
-            </div>
-            <div className="offer offer__for_men">
-              <h4 className="offer_subtitle">HOT DEAL</h4>
-              <h3 className="offer_title">FOR MEN</h3>
-            </div>
-            <div className="offer offer__for_kids">
-              <h4 className="offer_subtitle">NEW ARRIVALS</h4>
-              <h3 className="offer_title">FOR KIDS</h3>
-            </div>
-          </div>
-          <div className="offer offer__accesories">
-            <h4 className="offer_subtitle">LUXIROUS & TRENDY</h4>
-            <h3 className="offer_title">ACCESORIES</h3>
-          </div>
-        </div>
-        <div className="products center">
-          <p className="products_title">Fetured Items</p>
-          <p className="products_text">
-            Shop for items based on what we featured in this week
-          </p>
-          <div className="product_items">
-            {products.slice(6).map((product) => (
-              <ProductItem
-                key={product.id}
-                id={product.id}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-                imageUrl={product.imageUrl}
-              />
-            ))}
-          </div>
-          <div className="products_button">
-            <Link className="browse_button" to="/catalog">
-              Browse All Product
+        </section>
+        <section className="sections">
+          <div className="container">
+            <Link to="/catalog" className="sections__item section section_for_women">
+              <div className="section__text">
+                <div className="section__text1">30% OFF</div>
+                <div className="section__text2">FOR WOMEN</div>
+              </div>
+            </Link>
+            <Link to="/catalog" className="sections__item section section_for_men">
+              <div className="section__text">
+                <div className="section__text1">HOT DEAL</div>
+                <div className="section__text2">FOR MEN</div>
+              </div>
+            </Link>
+            <Link to="/catalog" className="sections__item section section_for_kids">
+              <div className="section__text">
+                <div className="section__text1">NEW ARRIVALS</div>
+                <div className="section__text2">FOR KIDS</div>
+              </div>
+            </Link>
+            <Link to="/catalog" className="sections__item section section_for_accesories">
+              <div className="section__text">
+                <div className="section__text1">LUXIROUS &amp; TRENDY</div>
+                <div className="section__text2">ACCESORIES</div>
+              </div>
             </Link>
           </div>
-        </div>
+        </section>
+        <section className="featured">
+          <div className="container">
+            <div className="featured__title">Featured Items</div>
+            <div className="featured__subtitle">Shop for items based on what we featured in this week</div>
+            <div className="featured__product-list">
+              <ProductList products={products} />
+            </div>
+            <Link  to="/catalog" className="featured__browse-all">
+              <span>Browse All Product</span>
+            </Link>
+          </div>
+        </section>
+
         <section>
           <div className="features center">
             <figure>
               <div className="feature">
-                <FeatureDelivery_icon className="feature_icon" />
+                <FeatureDeliveryIcon className="feature_icon"/>
                 <h4 className="feature_title">Free Delivery</h4>
                 <p className="feature_description">
                   Worldwide delivery on all. Authorit tively morph
@@ -93,7 +80,7 @@ function MainPage() {
             </figure>
             <figure>
               <div className="feature">
-                <FeatureDiscount_icon className="feature_icon" />
+                <FeatureDiscountIcon className="feature_icon"/>
                 <h4 className="feature_title">Sales & discounts</h4>
                 <p className="feature_description">
                   Worldwide delivery on all. Authorit tively morph
@@ -103,7 +90,7 @@ function MainPage() {
             </figure>
             <figure>
               <div className="feature">
-                <FeatureQuality_icon className="feature_icon" />
+                <FeatureQualityIcon className="feature_icon"/>
                 <h4 className="feature_title">Quality assurance</h4>
                 <p className="feature_description">
                   Worldwide delivery on all. Authorit tively morph
@@ -114,7 +101,6 @@ function MainPage() {
           </div>
         </section>
       </div>
-      <Footer />
     </div>
   )
 }
