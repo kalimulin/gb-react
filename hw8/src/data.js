@@ -8,7 +8,7 @@ const products = [
     price: 52.0,
     size: "M",
     color: "Red",
-    imageUrl: "img/prod1.jpg",
+    imageUrl: "/img/prod1.jpg",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const products = [
     price: 52.0,
     size: "S",
     color: "Red",
-    imageUrl: "img/prod2.jpg",
+    imageUrl: "/img/prod2.jpg",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const products = [
     price: 52.0,
     size: "XS",
     color: "Red",
-    imageUrl: "img/prod3.png",
+    imageUrl: "/img/prod3.png",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const products = [
     price: 52.0,
     size: "L",
     color: "Red",
-    imageUrl: "img/prod4.png",
+    imageUrl: "/img/prod4.png",
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ const products = [
     price: 52.0,
     size: "L",
     color: "Red",
-    imageUrl: "img/prod5.png",
+    imageUrl: "/img/prod5.png",
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ const products = [
     price: 52.0,
     size: "M",
     color: "Red",
-    imageUrl: "img/prod6.png",
+    imageUrl: "/img/prod6.png",
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const products = [
     price: 52.0,
     size: "S",
     color: "Red",
-    imageUrl: "img/prod7.png",
+    imageUrl: "/img/prod7.png",
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ const products = [
     price: 52.0,
     size: "M",
     color: "Red",
-    imageUrl: "img/prod8.png",
+    imageUrl: "/img/prod8.png",
   },
   {
     id: 9,
@@ -88,7 +88,7 @@ const products = [
     price: 52.0,
     size: "M",
     color: "Red",
-    imageUrl: "img/prod9.png",
+    imageUrl: "/img/prod9.png",
   },
   {
     id: 10,
@@ -98,7 +98,7 @@ const products = [
     price: 52.0,
     size: "XS",
     color: "Red",
-    imageUrl: "../img/prod10.png",
+    imageUrl: "/img/prod10.png",
   },
   {
     id: 11,
@@ -108,7 +108,7 @@ const products = [
     price: 52.0,
     size: "S",
     color: "Red",
-    imageUrl: "img/prod11.png",
+    imageUrl: "/img/prod11.png",
   },
   {
     id: 12,
@@ -118,7 +118,7 @@ const products = [
     price: 52.0,
     size: "XS",
     color: "Red",
-    imageUrl: "img/prod12.png",
+    imageUrl: "/img/prod12.png",
   },
 ];
 

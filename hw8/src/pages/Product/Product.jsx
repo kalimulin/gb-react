@@ -4,6 +4,7 @@ import products from "../../data"
 
 import "./Product.scss"
 import {useParams} from "react-router-dom";
+import ProductList from "../../components/ProductList/ProductList";
 
 const Product = () => {
     let params = useParams()
@@ -67,59 +68,7 @@ const Product = () => {
           </div>
           <div className="product-page__other-products">
               <div className="container">
-                  <div className="product-list">
-                      <div className="product-list__items">
-                          <div className="product-list__item">
-                              <div className="product-list__image">
-                                  <img src="../../img/" alt="product-list"/>
-                                  <div className="product-list__overlay">
-                                      <div className="product-list__add"><img className="product-list__add-icon"
-                                                                              src="img/icon-cart.02c7b4eb.svg"
-                                                                              alt="cart"/><span>Add to Cart</span></div>
-                                  </div>
-                              </div>
-                              <a aria-current="page" href="#/product"
-                                 className="router-link-active router-link-exact-active product-list__item-text">
-                                  <div className="product-list__item-title">ELLERY X M'O CAPSULE</div>
-                                  <div className="product-list__item-desc">Known for her sculptural takes on traditional
-                                      tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
-                                  </div>
-                                  <div className="product-list__item-price">$52.00</div>
-                              </a></div>
-                          <div className="product-list__item">
-                              <div className="product-list__image"><img src="img/products/2.png" alt="product-list"/>
-                                  <div className="product-list__overlay">
-                                      <div className="product-list__add"><img className="product-list__add-icon"
-                                                                              src="img/icon-cart.02c7b4eb.svg"
-                                                                              alt="cart"/><span>Add to Cart</span></div>
-                                  </div>
-                              </div>
-                              <a aria-current="page" href="#/product"
-                                 className="router-link-active router-link-exact-active product-list__item-text">
-                                  <div className="product-list__item-title">ELLERY X M'O CAPSULE</div>
-                                  <div className="product-list__item-desc">Known for her sculptural takes on traditional
-                                      tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
-                                  </div>
-                                  <div className="product-list__item-price">$52.00</div>
-                              </a></div>
-                          <div className="product-list__item">
-                              <div className="product-list__image"><img src="img/products/3.png" alt="product-list"/>
-                                  <div className="product-list__overlay">
-                                      <div className="product-list__add"><img className="product-list__add-icon"
-                                                                              src="img/icon-cart.02c7b4eb.svg"
-                                                                              alt="cart"/><span>Add to Cart</span></div>
-                                  </div>
-                              </div>
-                              <a aria-current="page" href="#/product"
-                                 className="router-link-active router-link-exact-active product-list__item-text">
-                                  <div className="product-list__item-title">ELLERY X M'O CAPSULE</div>
-                                  <div className="product-list__item-desc">Known for her sculptural takes on traditional
-                                      tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
-                                  </div>
-                                  <div className="product-list__item-price">$52.00</div>
-                              </a></div>
-                      </div>
-                  </div>
+                  <ProductList products={products.slice(0,3)} />
               </div>
           </div>
       </div>
